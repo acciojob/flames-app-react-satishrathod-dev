@@ -19,19 +19,21 @@ const App = () => {
 
   const calculateRelationship = () => {
     if (!name1 || !name2) {
-      setResult("Please Enter valid input");
+      setResult("Please Enter valid input"); // Base condition
       return;
     }
 
     const count = removeCommonLetters(name1, name2);
     const relationship = getRelationship(count);
-    console.log(relationship);
+    // console.log(relationship);
     setResult(relationship);
   };
 
   const removeCommonLetters = (str1, str2) => {
     const arr1 = str1.split("");
     const arr2 = str2.split("");
+    // let result1 = str1.slice(1); // "urj"
+    // let result2 = str2.slice(1);
 
     // arr1.forEach((char) => {
     //   const index = arr2.indexOf(char);
@@ -43,6 +45,9 @@ const App = () => {
     // return arr1.length + arr2.length;
     const count = arr1.filter((char) => !arr2.includes(char)).join("");
     return count.length;
+    // const count = result1 + result2;
+    // console.log(count);
+    // return count.length;
   };
 
   const getRelationship = (count) => {
@@ -54,8 +59,8 @@ const App = () => {
       "Enemy",
       "Siblings",
     ];
-    const res = flames[(count - 1) % 6];
-    console.log(res);
+    const res = flames[Math.float(count % 6)];
+    // console.log(res);
     return res;
     // return flames[count % 6];
   };
