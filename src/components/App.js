@@ -59,7 +59,7 @@ const App = () => {
       "Enemy",
       "Siblings",
     ];
-    const res = flames[Math.float(count % 6)];
+    const res = flames[Math.floor(count % 6)];
     // console.log(res);
     return res;
     // return flames[count % 6];
